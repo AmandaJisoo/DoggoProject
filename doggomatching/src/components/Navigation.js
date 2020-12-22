@@ -1,38 +1,30 @@
-import React  from "react";
-import { Link } from "react-router-dom";
-import Headroom from "react-headroom";
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
+import logo from '../resource/logo.png';
 
 const Navigation = () => {
     return (
-        <div>
-            <Headroom>
-                <div className="sticky nav-bg pt-3 pb-3">
-                    <nav className="navbar navbar-expand-xl navbar-light p-0">
-                        <Link className="navbar-brand" to="/">
-                            <h3 className="mb-0">Doggo Match</h3>
-                            <img
-                                className="pl-2" alt="recycle symbol"
-                                src="https://www.flaticon.com/svg/static/icons/svg/3696/3696954.svg"
-                            />
-                        </Link>
-                        {/* <button
-                            className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarNav" aria-controls="navbarNav"
-                            aria-expanded="false" aria-label="Toggle navigation"
-                        >
-                            <span className="navbar-toggler-icon"></span>
-                        </button> */}
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav ml-auto">
-                                <li>
-                                    <Link className="nav-link" to="/">HOME</Link>   
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </Headroom>
-        </div>
+            <Navbar bg="dark" expand="lg">
+                <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
+                <Navbar.Collapse id="basic-navbar-nav">
+                        <NavLink className="navbar-brand" to="/">
+                            <div>
+                                <h3 className="brand-name"> Doggo Match</h3>
+                                <img src={logo} alt="Logo" />;
+                            </div>
+                        </NavLink>
+                    <Nav>
+                        <NavLink className="d-inline p-2 bg-dark text-white" to="/">HOME</NavLink>
+                        <NavLink className="d-inline p-2 bg-dark text-white" to="/commentOverview">CONNECT</NavLink>
+                        <NavLink className="d-inline p-2 bg-dark text-white" to="/Inspire">INSPIRE</NavLink>
+                        <NavLink className="d-inline p-2 bg-dark text-white" to="/AboutUs">ABOUT US</NavLink>
+                        {/* {this.props.isSignedIn ? <NavLink className="d-inline p-2 bg-dark text-white" to="/" onClick={this.props.handleSignOut}>Sign Out</NavLink> :
+                            <NavLink className="d-inline p-2 bg-dark text-white" to="/login">LOG IN</NavLink>
+                        } */}
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
     )
 }
 
