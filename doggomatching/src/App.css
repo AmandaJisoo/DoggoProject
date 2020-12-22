@@ -8,6 +8,42 @@
   width: 100% !important;
 }
 
-.brand-name {
+#brand-logo {
+  /* margin-top:1px; */
+  max-width: 80px;
+  max-height:80px;
+}
+
+#brand-title {
+  /* color: #FBEAEB;  */
+  color: #2F3C7E;
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 50px; 
+  font-weight: bold; 
+  letter-spacing: -1px; 
+  line-height: 1;
+  -webkit-text-stroke: 0.5px;
+}
+
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+.header h1 {
   color: white;
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+#nav {
+  background-color:#FBEAEB;
+}
+
+.link-path {
+  color: #2F3C7E;
+  font-size: 20px;
 }

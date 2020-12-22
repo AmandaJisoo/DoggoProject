@@ -1,24 +1,25 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import logo from '../resource/logo.png';
 
 const Navigation = () => {
     return (
-            <Navbar bg="dark" expand="lg">
+        // bg="dark"
+            <Navbar id="nav" expand="lg">
                 <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
-                        <NavLink className="navbar-brand" to="/">
-                            <div>
-                                <h3 className="brand-name"> Doggo Match</h3>
-                                <img src={logo} alt="Logo" />;
-                            </div>
-                        </NavLink>
-                    <Nav>
-                        <NavLink className="d-inline p-2 bg-dark text-white" to="/">HOME</NavLink>
-                        <NavLink className="d-inline p-2 bg-dark text-white" to="/commentOverview">CONNECT</NavLink>
-                        <NavLink className="d-inline p-2 bg-dark text-white" to="/Inspire">INSPIRE</NavLink>
-                        <NavLink className="d-inline p-2 bg-dark text-white" to="/AboutUs">ABOUT US</NavLink>
+                    <NavLink className="navbar-brand" to="/">
+                        <div class="header">
+                            <img src={logo} alt="Logo" id="brand-logo"/>
+                            <h1 id="brand-title">Doggo Match</h1>
+                        </div>
+                    </NavLink>
+                    <Nav className="justify-content-end" style={{ width: "100%" }}>
+                        <NavLink className="d-inline p-2  link-path" to="/">HOME</NavLink>
+                        <NavLink className="d-inline p-2  link-path" to="/commentOverview">CONNECT</NavLink>
+                        <NavLink className="d-inline p-2  link-path" to="/Inspire">INSPIRE</NavLink>
+                        <NavLink className="d-inline p-2  link-path" to="/AboutUs">ABOUT US</NavLink>
                         {/* {this.props.isSignedIn ? <NavLink className="d-inline p-2 bg-dark text-white" to="/" onClick={this.props.handleSignOut}>Sign Out</NavLink> :
                             <NavLink className="d-inline p-2 bg-dark text-white" to="/login">LOG IN</NavLink>
                         } */}
