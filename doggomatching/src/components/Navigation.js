@@ -1,9 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import logo from '../resource/logo.png';
 
 const Navigation = () => {
+    //TODO: the useLocation is not working
+    //const rootPath = useLocation().pathname.split("/")[1];
+    //console.log(rootPath);
     return (
         // bg="dark"
             <Navbar id="nav" expand="lg">
