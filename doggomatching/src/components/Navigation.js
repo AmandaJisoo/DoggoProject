@@ -20,9 +20,7 @@ const Navigation = () => {
                     </NavLink>
                     <Nav className="justify-content-end" style={{ width: "100%" }}>
                         <NavLink className="d-inline p-2  link-path" to="/">HOME</NavLink>
-                        <NavLink className="d-inline p-2  link-path" to="/commentOverview">CONNECT</NavLink>
-                        <NavLink className="d-inline p-2  link-path" to="/Inspire">INSPIRE</NavLink>
-                        <NavLink className="d-inline p-2  link-path" to="/AboutUs">ABOUT US</NavLink>
+                        <NavLink className="d-inline p-2  link-path" to="/signup">SignUp</NavLink>
                         {/* {this.props.isSignedIn ? <NavLink className="d-inline p-2 bg-dark text-white" to="/" onClick={this.props.handleSignOut}>Sign Out</NavLink> :
                             <NavLink className="d-inline p-2 bg-dark text-white" to="/login">LOG IN</NavLink>
                         } */}
