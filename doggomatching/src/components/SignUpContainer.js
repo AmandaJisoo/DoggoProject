@@ -4,7 +4,7 @@ const SignUpContainer = () => {
     return (
         <main>
             <div>
-            SignUpContainer
+             SignUpContainer
             </div>
         </main>
     )
