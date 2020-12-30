@@ -1,0 +1,19 @@
+POST http://localhost:4000/app/signup
+Content-Type: application/json
+
+{
+    "firstname": "Jamie",
+    "lastname": "Lee",
+    "username": "amanda",
+    "password": "amanda",
+    "zip": "98105",
+    "nameOfPet": "Happy",
+    "sizeOfPet": "small",
+    "sexOfPet": "female",
+    "ageOfPet": 2,
+    "personalityOfPet": ["Introverted"],
+    "sizePrefereceToBeFrined": ["Big"],
+    "areaOfInterest": ["making frined"],
+    "fbName": "Amanda Park",
+    "instagramName": "amanda_u_know"
+}

@@ -17,8 +17,8 @@ const signUpTemplate = new mongoose.Schema({
         type: String,
         required: true
     },
-    zipcode: {
-        type: Number,
+    zip: {
+        type: String,
         required: true
     },
     nameOfPet: {
@@ -38,7 +38,7 @@ const signUpTemplate = new mongoose.Schema({
         required: true
     },
     personalityOfPet:{
-        type: String,
+        type: [String],
         required: true
     },
     sizePrefereceToBeFrined:{
@@ -46,13 +46,27 @@ const signUpTemplate = new mongoose.Schema({
         required: true
     },
     areaOfInterest: {
-        type:String,
+        type:[String],
         required: true
     },
+    fbName: {
+        type:String,
+        required: false,
+        default: "N/A"
+    },
+    instagramName: {
+        type:String,
+        required: false,
+        default: "N/A",
+    },
+    // img: {
+    //     data: Buffer,
+    //     contentType: String
+    // },
     date: {
         type: Date,
         default: Date.now
     }
 })
 
-module.exports = mongoose.model('mytable', signUpTemplate)
+module.exports = mongoose.model('tableForDogSign', signUpTemplate)
