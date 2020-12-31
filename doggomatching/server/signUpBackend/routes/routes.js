@@ -18,7 +18,9 @@ router.post('/signup', (request, response) => {
         sizePrefereceToBeFrined: request.body.sizePrefereceToBeFrined,
         areaOfInterest: request.body.areaOfInterest,
         fbName: request.body.fbName,
-        instagramName: request.body.instagramName
+        instagramName: request.body.instagramName,
+        city: request.body.city,
+        state: request.body.state,    
         // img figure out later 
     })
 

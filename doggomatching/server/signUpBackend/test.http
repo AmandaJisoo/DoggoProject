@@ -6,7 +6,7 @@ Content-Type: application/json
     "lastname": "Lee",
     "username": "amanda",
     "password": "amanda",
-    "zip": "98105",
+    "zip": "00000",
     "nameOfPet": "Happy",
     "sizeOfPet": "small",
     "sexOfPet": "female",
@@ -15,5 +15,8 @@ Content-Type: application/json
     "sizePrefereceToBeFrined": ["Big"],
     "areaOfInterest": ["making frined"],
     "fbName": "Amanda Park",
-    "instagramName": "amanda_u_know"
+    "instagramName": "amanda_u_know",
+    "city": "Seattle",
+    "state": "WA"
+    
 }

@@ -1,47 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Button, Form } from "react-bootstrap";
+import { MDBSelect, MDBSelectInput, MDBSelectOptions, MDBSelectOption} from "mdbreact";
 
 const SignUpContainer = () => {
+    const [firstName, setFirstname] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [password, setPassword] = useState("");
+    const [nameOfPet, setPetName] = useState("");
+    const [sizeOfPet, setSizePet] = useState("");
+    const [sexOfPet, setSexPet] = useState("");
+    const [ageOfPet, setPetAge] = useState("");
+    const [personalityOfPet, setPetPersonality] = useState("");
+    const [sizePreferece, setPetFriendSize] = useState("");
+    const [areaOfInterest, setAreaOfInterest] = useState("");
+    const [fBName, setFbName] = useState("");
+    const [instagramName, setInstagramName] = useState("");
+    // reference: https://mdbootstrap.com/docs/react/forms/multiselect/
+    // const personalityOfList = [{value:'One',selected:true},{value:'Two'},{value:'Three'},{value:'Four',label:'Four Label'}]
     return (
         <Form>
         <Form.Row>
             <Form.Group as={Col} controlId="formGridFirstName">
-            <Form.Label>Firstname</Form.Label>
-            <Form.Control type="text" placeholder="Enter Firstname" />
+                <Form.Label>Firstname</Form.Label>
+                <Form.Control type="text" placeholder="Enter Firstname" onChange={e => setFirstname(e.target.value)} />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridLastName">
-            <Form.Label>Lastname</Form.Label>
-            <Form.Control type="text" placeholder="Enter Password" />
+                <Form.Label>Lastname</Form.Label>
+                <Form.Control type="text" placeholder="Enter Password" onChange={e => setLastName(e.target.value)} />
             </Form.Group>
         </Form.Row>
 
         <Form.Row>
             <Form.Group as={Col} controlId="formGridUsername">
-            <Form.Label>Username</Form.Label>
-            <Form.Control type="email" placeholder="Enter Username" />
+                <Form.Label>Username</Form.Label>
+                <Form.Control type="text" placeholder="Enter Username" onChange={e => setUsername(e.target.value)} />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter Password" />
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Enter Password" onChange={e => setPassword(e.target.value)} />
             </Form.Group>
         </Form.Row>
 
         <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" placeholder="Enter Email" onChange={e => setEmail(e.target.value)} />
             </Form.Group>
         </Form.Row>
 
         <Form.Row>
             <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>City</Form.Label>
-            <Form.Control />
+                <Form.Control placeholder="Enter City" onChange={e => setCity(e.target.value)} />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridState">
+            <Form.Group as={Col} controlId="formGridState" onChange={e => setState(e.target.value)}>
                 <Form.Label>State</Form.Label>
                 <Form.Control as="select" defaultValue="Choose...">
                     <option value="">N/A</option>
@@ -99,14 +118,46 @@ const SignUpContainer = () => {
                     <option value="WY">Wyoming</option>
                 </Form.Control>
             </Form.Group>
-            <Form.Group as={Col} controlId="formGridZip">
-            <Form.Label>Zip</Form.Label>
-            <Form.Control />
+                <Form.Group as={Col} controlId="formGridZip">
+                <Form.Label>Zipcode</Form.Label>
+                <Form.Control placeholder="Enter Zipcode"/>
+            </Form.Group>
+        </Form.Row>
+
+        <Form.Row>
+            <Form.Group as={Col} controlId="formGridNameOfPet">
+            <Form.Label>Name of Pet</Form.Label>
+            <Form.Control type="text" placeholder="Enter Name of Pet" onChange={e => setPetName(e.target.value)} />
+            </Form.Group>
+        </Form.Row>
+
+        <Form.Row>
+            <Form.Group as={Col} controlId="formGridNameOfPet">
+            <Form.Label>Size of Pet</Form.Label>
+            <Form.Control type="text" placeholder="Enter Size of Pet" onChange={e => setSizePet(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridNameOfPet">
+            <Form.Label>Sex of Pet</Form.Label>
+            <Form.Control type="text" placeholder="Enter Size of Pet" onChange={e => setSexPet(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridNameOfPet">
+            <Form.Label>Age of Pet</Form.Label>
+            <Form.Control type="text" placeholder="Enter Size of Pet" onChange={e => setPetAge(e.target.value)} />
+            </Form.Group>
+        </Form.Row>
+
+        <Form.Row>
+            <Form.Group as={Col} controlId="formGridNameOfPet">
+            <Form.Label>Personality of Pet</Form.Label>
+            <Form.Control type="text" placeholder="Enter Size of Pet" onChange={e => setPetPersonality(e.target.value)} />
             </Form.Group>
         </Form.Row>
 
         <Button variant="primary" type="submit">
             Submit
+            {console.log(state)}
         </Button>
         </Form>
     )

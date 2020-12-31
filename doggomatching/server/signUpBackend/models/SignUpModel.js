@@ -59,6 +59,14 @@ const signUpTemplate = new mongoose.Schema({
         required: false,
         default: "N/A",
     },
+    city: {
+        type:String,
+        required: true,
+    },
+    state: {
+        type:String,
+        required: true,
+    },
     // img: {
     //     data: Buffer,
     //     contentType: String
