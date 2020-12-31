@@ -10,10 +10,11 @@ const Home = () => {
             <header className="container" id="pic">
                 <div>
                     <h1 id="landing-title">Find Freinds and Partners for Your Puppy</h1>
-                    {/* <p>How are you doing?</p> */}
                     <Button variant="primary" id="landing-page-btn">CREATE ACCOUNT</Button>{''}
                 </div>
-                <span id="down">&#8595;</span>
+            <div id="wrapper">  
+            <div id="yourdiv">Read more about Doggo Match <span role="img" aria-label="down arrow">↓</span></div>
+            </div>
             </header>
             <div className="main">
                 <h3 style={{ "textAlign": "center" }}>Some Sample Content</h3>
