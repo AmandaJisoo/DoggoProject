@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Button, Form } from "react-bootstrap";
-import { MDBSelect, MDBSelectInput, MDBSelectOptions, MDBSelectOption} from "mdbreact";
+import { Multiselect } from "multiselect-react-dropdown";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SignUpContainer = () => {
     const [firstName, setFirstname] = useState("");
@@ -19,8 +20,27 @@ const SignUpContainer = () => {
     const [areaOfInterest, setAreaOfInterest] = useState("");
     const [fBName, setFbName] = useState("");
     const [instagramName, setInstagramName] = useState("");
-    // reference: https://mdbootstrap.com/docs/react/forms/multiselect/
-    // const personalityOfList = [{value:'One',selected:true},{value:'Two'},{value:'Three'},{value:'Four',label:'Four Label'}]
+
+
+    const  objectArray =  [
+        { key: "Frendly" },
+        { key: "Shy"  },
+        { key: "Ambitious" },
+        { key: "Impulsive" },
+        { key: "Confident" },
+        { key: "Independent" },
+        { key: "Laidback" }
+    ]
+
+    var personalityLi = []
+    const handleAddPersonality = (e) => {
+        e.forEach((evt) => {
+            personalityLi.push(evt.key);
+        })
+        setPetPersonality(personalityLi);
+    }
+
+    
     return (
         <Form>
         <Form.Row>
@@ -126,20 +146,29 @@ const SignUpContainer = () => {
 
         <Form.Row>
             <Form.Group as={Col} controlId="formGridNameOfPet">
-            <Form.Label>Name of Pet</Form.Label>
-            <Form.Control type="text" placeholder="Enter Name of Pet" onChange={e => setPetName(e.target.value)} />
+                <Form.Label>Name of Pet</Form.Label>
+                <Form.Control type="text" placeholder="Enter Name of Pet" onChange={e => setPetName(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridNameOfPet">
+                <Form.Label>Size of Pet</Form.Label>
+                <Form.Control as="select" defaultValue="Choose...">
+                    <option value="">Select Size</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </Form.Control>
             </Form.Group>
         </Form.Row>
 
         <Form.Row>
             <Form.Group as={Col} controlId="formGridNameOfPet">
-            <Form.Label>Size of Pet</Form.Label>
-            <Form.Control type="text" placeholder="Enter Size of Pet" onChange={e => setSizePet(e.target.value)} />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridNameOfPet">
             <Form.Label>Sex of Pet</Form.Label>
-            <Form.Control type="text" placeholder="Enter Size of Pet" onChange={e => setSexPet(e.target.value)} />
+            <Form.Control as="select" defaultValue="Choose..." onChange={(e) => console.log(e.target.value)}>
+                    <option value="">Select Gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+            </Form.Control>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridNameOfPet">
@@ -151,13 +180,20 @@ const SignUpContainer = () => {
         <Form.Row>
             <Form.Group as={Col} controlId="formGridNameOfPet">
             <Form.Label>Personality of Pet</Form.Label>
-            <Form.Control type="text" placeholder="Enter Size of Pet" onChange={e => setPetPersonality(e.target.value)} />
+            <Multiselect
+                options={objectArray}
+                displayValue="key"
+                showCheckbox={true}
+                onSelect={ handleAddPersonality }
+                onRemove={ handleAddPersonality }
+                closeIcon="close"
+            />
             </Form.Group>
         </Form.Row>
 
         <Button variant="primary" type="submit">
             Submit
-            {console.log(state)}
+            {/* {console.log('check', personalityOfPet)} */}
         </Button>
         </Form>
     )
