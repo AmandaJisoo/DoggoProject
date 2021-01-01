@@ -206,4 +206,11 @@ container {
   #yourdiv {
     margin-top:55vh;
   }
+
+  .form-view {
+    margin-left: 80px !important;
+    margin-right: 80px !important;
+  }
+
+ 
 }
