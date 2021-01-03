@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Col, Button, Form } from "react-bootstrap";
+import { Col, Button, Form, Modal } from "react-bootstrap";
+import SignUpErrors from './SignUpErros';
+
 import { Multiselect } from "multiselect-react-dropdown";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -22,8 +24,8 @@ const SignUpContainer = () => {
     const [fbName, setFbName] = useState("");
     const [instagramName, setInstagramName] = useState("");
     const [zipcode, setZipcode] = useState("");
-
-
+    const [error, setError] = useState(false);
+ 
 
     const  personalityOptions =  [
         { key: "Frendly" },
@@ -71,12 +73,6 @@ const SignUpContainer = () => {
         setAreaOfInterest(interestLi);
     }
 
-    // handleEmptyFirstAndLastname = () => {
-    //     if (firstName == "") {
-
-    //     }
-    // }
-
     const handleEmptyMutipleSelectField = () => {
         console.log('personalityOfPet[0]', personalityOfPet[0])
         if (personalityOfPet[0] !== undefined && sizePreferece[0] !== undefined && areaOfInterest[0] !== undefined) {
@@ -89,6 +85,10 @@ const SignUpContainer = () => {
         return false;
     }
 
+    const handlePopup = () => {
+        console.log("nani")
+        setError(false);
+    }
 
     const onSubmit = evt => {
         evt.preventDefault();
@@ -120,18 +120,14 @@ const SignUpContainer = () => {
         if (handleEmptyMutipleSelectField()) {
             axios.post('http://localhost:4000/app/signup', registered)
             .then(response => console.log(response.data))
+        }else {
+            setError(true);
         }
-
-        // this.setState({gi
-        //     fullName: '',
-        //     username: '',
-        //     email: '',
-        //     password: ''
-        // })
 
     }
 
     return (
+        <>
         <Form onSubmit={onSubmit} className="form-view">
             <Form.Row>
                 <Form.Group as={Col} controlId="formGridFirstName" className="text-box">
@@ -293,7 +289,7 @@ const SignUpContainer = () => {
                 />
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridFriendPreference">
+                <Form.Group as={Col} controlId="formGridFriendPreference" required>
                     <Form.Label>Pet Friend Preference Size</Form.Label>
                     <Multiselect
                         options={sizePreferenceOptions}
@@ -322,8 +318,9 @@ const SignUpContainer = () => {
 
             <input type='submit' className='btn btn-danger btn-block' 
             value='Submit'></input>
-
+            {error? <SignUpErrors error={error} handlePopup={handlePopup}></SignUpErrors> : console.log("wtf")}
         </Form>
+        </>
     )
 }
 
