@@ -181,7 +181,7 @@ const SignUpContainer = () => {
                 <Form.Group as={Col} controlId="formGridState" onChange={e => setState(e.target.value)}>
                     <Form.Label>State</Form.Label>
                     <Form.Control required as="select" defaultValue="Choose...">
-                        <option value="">N/A</option>
+                        <option key='blankChoice' hidden value />
                         <option value="AK">Alaska</option>
                         <option value="AL">Alabama</option>
                         <option value="AR">Arkansas</option>
@@ -252,7 +252,7 @@ const SignUpContainer = () => {
                 <Form.Group as={Col} controlId="formGridNameOfPet">
                     <Form.Label>Size of Pet</Form.Label>
                     <Form.Control required as="select" defaultValue="Choose..." onChange={(e)=> setPetSize(e.target.value)} >
-                        <option value="">Select Size</option>
+                        <option key='blankChoice' hidden value />
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
@@ -264,7 +264,7 @@ const SignUpContainer = () => {
                 <Form.Group as={Col} controlId="formGridNameOfPet">
                 <Form.Label>Sex of Pet</Form.Label>
                 <Form.Control required as="select" defaultValue="Choose..." onChange={(e) => setSexPet(e.target.value)}>
-                    <option value="">Select Gender</option>
+                    <option key='blankChoice' hidden value />
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
                 </Form.Control>
